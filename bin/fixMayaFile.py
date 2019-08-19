@@ -75,4 +75,6 @@ if __name__ == "__main__":
    scene, ext = os.path.splitext(os.path.basename(mayaScene))
    nscene = "{name}_backup_{version}.{ext}".format(name=scene, version=newVer, ext=ext)
 
-   shutil.copyfile(mayaScene, os.path.join(backupDir, nscene).replace("\\","/"))
+   backupScene = os.path.join(backupDir, nscene).replace("\\","/")
+
+   shutil.copyfile(mayaScene, backupScene)
