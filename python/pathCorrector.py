@@ -32,7 +32,7 @@ def pathCorrector(path, verbose=False):
     uncorrected_path = os.path.join(uniRoot, *path_parts[0:len(path_parts)-n]).replace("\\", "/").lower()
 
     if uncorrected_path in cache:
-      uniRoot   = os.path.join(uniRoot, cache[uncorrected_path]).replace("\\", "/")
+      uniRoot    = os.path.join(uniRoot, cache[uncorrected_path]).replace("\\", "/")
       path_parts = path_parts[len(path_parts)-n:]
       break
 
@@ -46,7 +46,7 @@ def pathCorrector(path, verbose=False):
       if lower_path_parts in lower_path:
         l                = list_dir[lower_path.index(lower_path_parts)]
         cacheKeys        = os.path.join(uniRoot, part).replace("\\", "/").lower()
-        uniRoot         = os.path.join(uniRoot, l).replace("\\", "/")
+        uniRoot          = os.path.join(uniRoot, l).replace("\\", "/")
         cache[cacheKeys] = uniRoot
 
     else:
